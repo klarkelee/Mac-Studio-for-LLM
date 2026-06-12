@@ -22,6 +22,9 @@ configure a raw Mac Studio for private local LLM
 
 ### hf to manage model downloads from Hugging Face:
     brew install hf
+    export HF_TOKEN="your_actual_token_here"
+    hf auth login
+    
 
 ### Claude Code:
     brew install --cask claude-code
