@@ -10,3 +10,10 @@ configure a raw Mac Studio for private local LLM
 * `OS`  Tahoe 26.5
 
 ## Step 1: 
+### Install brew, uv, pnpm
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+brew install uv pnpm
+
+### Install node and python
+pnpm env use --global lts
+uv python install
