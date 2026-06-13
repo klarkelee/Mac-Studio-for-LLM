@@ -28,3 +28,12 @@ configure a raw Mac Studio for private local LLM
 
 ### Claude Code:
     brew install --cask claude-code
+
+## Step 2: Maximize GPU memory
+* By default, macOS caps the GPU to 75% of total memory. 
+* Set 6GB for operating system overhead 
+* Set iogpu.wired_lwm_mb to 10GB to encourage memory reclamation and compression.
+### Code:  
+    TOTAL_MEMORY=$(($(sysctl -n hw.memsize) / 1024 / 1024))
+    sudo sysctl -w iogpu.wired_limit_mb=$((TOTAL_MEMORY - 6144))
+    sudo sysctl -w iogpu.wired_lwm_mb=$((TOTAL_MEMORY - 10240))
