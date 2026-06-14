@@ -37,3 +37,8 @@ configure a raw Mac Studio for private local LLM
     TOTAL_MEMORY=$(($(sysctl -n hw.memsize) / 1024 / 1024))
     sudo sysctl -w iogpu.wired_limit_mb=$((TOTAL_MEMORY - 6144))
     sudo sysctl -w iogpu.wired_lwm_mb=$((TOTAL_MEMORY - 10240))
+
+## Step 3: Configure MLX servers
+### Start the MLX server:
+    uv tool install mlx-lm
+    mlx_lm.server --model "mlx-community/Qwen3.6-40B-Claude-4.6-Opus-Deckard-Heretic-Uncensored-Thinking-8bit"
