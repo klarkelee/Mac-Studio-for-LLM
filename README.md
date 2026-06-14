@@ -42,3 +42,4 @@ configure a raw Mac Studio for private local LLM
 ### Start the MLX server:
     uv tool install mlx-lm
     mlx_lm.server --model "mlx-community/Qwen3.6-40B-Claude-4.6-Opus-Deckard-Heretic-Uncensored-Thinking-8bit"
+By default, models are saved to ~/.cache/huggingface/hub.
