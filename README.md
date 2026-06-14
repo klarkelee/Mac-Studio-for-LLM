@@ -38,8 +38,11 @@ configure a raw Mac Studio for private local LLM
     sudo sysctl -w iogpu.wired_limit_mb=$((TOTAL_MEMORY - 6144))
     sudo sysctl -w iogpu.wired_lwm_mb=$((TOTAL_MEMORY - 10240))
 
-## Step 3: Configure MLX servers
-### Start the MLX server:
+## Step 3: Configure Model Server
+### Option 1: User `MLX`, Start the MLX server:
     uv tool install mlx-lm
     mlx_lm.server --model "mlx-community/Qwen3.6-40B-Claude-4.6-Opus-Deckard-Heretic-Uncensored-Thinking-8bit"
 By default, models are saved to ~/.cache/huggingface/hub.
+
+### Option 2: User `LM Studio`:
+download from : https://lmstudio.ai
